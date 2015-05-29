@@ -26,6 +26,8 @@
    <files folder="site">
       <filename>index.html</filename>
       <filename>workteam.php</filename>
+      <filename>controller.php</filename>
+      <folder>views</folder>
    </files>
 
    <administration>
@@ -38,7 +40,7 @@
       <files folder="admin">
          <!-- Admin Main File Copy Section -->
          <filename>index.html</filename>
-         <filename>helloworld.php</filename>
+         <filename>workteam.php</filename>
          <!-- SQL files section -->
          <folder>sql</folder>
       </files>
