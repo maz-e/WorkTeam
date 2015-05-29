@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since 0.0.1
  */
-class WorkTeamViewTeam extends JViewLegacy
+class WorkTeamViewWorkTeam extends JViewLegacy
 {
    /**
     * Display the WorkTeam view
@@ -27,7 +27,7 @@ class WorkTeamViewTeam extends JViewLegacy
    function display($tpl = null)
    {
       // Assign data to the view
-      $this->msg = 'Company Work Team'
+      $this->msg = 'Company Work Team';
 
       // Display the view
       parent::display($tpl);
