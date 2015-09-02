@@ -23,7 +23,7 @@ defined('_JEXEC') or die('Restricted access');
    <?php foreach ($this->items as $row) : ?>
    	<div class="row">
    	   <div class="col s6">
-   	      <p>Hola</p>
+   	      <p><?php echo $row->name; ?></p>
    	   </div>
    	</div>
    <?php endforeach ?>
