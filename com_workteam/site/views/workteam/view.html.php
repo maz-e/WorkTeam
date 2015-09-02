@@ -24,12 +24,23 @@ class WorkTeamViewWorkTeam extends JViewLegacy
     *
     * @return  void
     */
-   function display($tpl = null)
-   {
-      // Assign data to the view
-      $this->msg = 'Company Work Team';
+    function display($tpl = null)
+	{
+      $app     = JFactory::getApplication();
 
-      // Display the view
-      parent::display($tpl);
-   }
+		// Get data from the model
+		$this->items		   = $this->get('Items');
+      $this->params        = $app->getParams();
+
+		// Check for errors.
+		if (count($errors = $this->get('Errors')))
+		{
+			JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
+
+			return false;
+		}
+
+		// Display the view
+		parent::display($tpl);
+	}
 }

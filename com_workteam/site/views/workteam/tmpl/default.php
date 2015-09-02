@@ -11,4 +11,20 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 
-<h1><?php echo $this->msg; ?></h1>
+<h1 class="teal-text"><?php echo JText::_('COM_WORKTEAM_WORKTEAM_VIEW'); ?></h1>
+
+<?php if (empty($this->items)) : ?>
+	<div class="card-panel alert-success animated bounceIn">
+		<div class="valign-wrapper">
+			<i class="large material-icons">info_outline</i>&nbsp;<?php echo JText::_('JGLOBAL_NO_MATCHING_RESULTS');?>
+		</div>
+	</div>
+<?php else : ?>
+   <?php foreach ($this->items as $row) : ?>
+   	<div class="row">
+   	   <div class="col s6">
+   	      <p>Hola</p>
+   	   </div>
+   	</div>
+   <?php endforeach ?>
+<?php endif ?>
