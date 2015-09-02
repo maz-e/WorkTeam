@@ -24,21 +24,17 @@ class WorkTeamModelWorkTeam extends JModelList
 	 */
 	protected function getListQuery()
 	{
-		// Request the selected id
-		$jinput = JFactory::getApplication()->input;
-		$catid  = $jinput->get('id', 1, 'INT');
-
 		// Initialize variables.
 		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true);
 
 		// Create the base select statement.
 		$query->select('a.*, c.title')
-                ->from($db->quoteName('#__workteam').'AS a')
-					 ->join('LEFT', '#__categories AS c ON c.id = a.catid');
+                ->from($db->quoteName('#__workteam').'AS a');
+					 //->join('LEFT', '#__categories AS c ON c.id = a.catid');
 
 		$query->where('a.published = 1');
-      $query->order('c.title asc');
+      // $query->order('c.title asc');
 
 		return $query;
 	}
