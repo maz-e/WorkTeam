@@ -1,4 +1,4 @@
 # WorkTeam
 Joomla! 3 Component
 
-Only making a test!
+Workteam Joomla Component for the Materialize CSS Framework based on Material Design by Google.
