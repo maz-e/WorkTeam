@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 
 <?php if (empty($this->items)) : ?>
 	<div class="card-panel alert-success animated bounceIn">
-		<div class="valign-wrapper">
+		<div class="valign-wrapper flow-text teal-text text-darken-2">
 			<i class="large material-icons">info_outline</i>&nbsp;<?php echo JText::_('JGLOBAL_NO_MATCHING_RESULTS');?>
 		</div>
 	</div>
