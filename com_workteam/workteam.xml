@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="component" version="3.2.0" method="upgrade">
-   <name>WorkTeam</name>
+   <name>COM_WORKTEAM</name>
    <!-- The following elements are optional and free of formatting constrains -->
    <creationDate>June 2015</creationDate>
    <author>Miguel Angel Zapatero</author>
@@ -9,9 +9,9 @@
    <copyright>Copyright Info</copyright>
    <license>License Info</license>
    <!-- The version string is recorded in the component table -->
-   <version>0.0.4</version>
+   <version>0.0.5</version>
    <!-- The description is optional and defaults to the name -->
-   <description>Description of the WorkTeam component</description>
+   <description>COM_WORKTEAM_DESCRIPTION</description>
 
    <install> <!-- Runs on install -->
 		<sql>
@@ -40,9 +40,13 @@
       <folder>views</folder>
    </files>
 
+   <languages folder="site/language">
+		<language tag="es-ES">es-ES/es-ES.com_workteam.ini</language>
+   </languages>
+
    <administration>
       <!-- Administration Menu Section -->
-      <menu link='index.php?option=com_workteam'>WorkTeam</menu>
+      <menu link='index.php?option=com_workteam'>COM_WORKTEAM_MENU</menu>
       <!-- Administration Main File Section -->
       <!-- Note the folder attribute: This attribute describes the folder
             to copy FROM in the package to install therefore files copied
@@ -59,5 +63,9 @@
 			<!-- views files section -->
 			<folder>views</folder>
       </files>
+      <languages folder="admin/language">
+         <language tag="es-ES">es-ES/es-ES.com_workteam.ini</language>
+         <language tag="es-ES">es-ES/es-ES.com_workteam.sys.ini</language>
+		</languages>
    </administration>
 </extension>
