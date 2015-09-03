@@ -2,17 +2,49 @@
 <form>
 	<fieldset>
 		<field
-				name="id"
-				type="hidden"
-				/>
+			name="id"
+			type="hidden"
+		/>
 		<field
-				name="name"
-				type="text"
-				label="COM_WORKTEAM_WORKTEAM_NAME_LABEL"
-				description="COM_WORKTEAM_WORKTEAM_NAME_DESC"
-				size="40"
-				class="inputbox"
-				default=""
-				/>
+			name="contact_name"
+			type="text"
+			label="COM_WORKTEAM_WORKTEAM_NAME_LABEL"
+			description="COM_WORKTEAM_WORKTEAM_NAME_DESC"
+			size="40"
+			class="inputbox input-xlarge input-large-text"
+			required="true"
+			default=""
+		/>
+		<field
+			name="email"
+			type="email"
+			label="JGLOBAL_EMAIL"
+			description="COM_ADMIN_USER_FIELD_EMAIL_DESC"
+			required="true"
+			size="30"
+			class="inputbox"
+			validate="email"
+		/>
+		<field
+			name="published"
+			type="list"
+			class="chzn-color-state"
+			default="0"
+			size="1"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+		>
+				<option value="1">JPUBLISHED</option>
+				<option value="0">JUNPUBLISHED</option>
+		</field>
+		<field
+			name="img_user"
+			type="media"
+			class=""
+			default=""
+			label="COM_WORKTEAM_WORKTEAM_FIELD_IMGUSER_LABEL"
+			description="COM_WORKTEAM_WORKTEAM_FIELD_IMGUSER_DESC"
+			directory=""
+		/>
 	</fieldset>
 </form>
