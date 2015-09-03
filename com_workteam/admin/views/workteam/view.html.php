@@ -71,15 +71,17 @@ class WorkTeamViewWorkTeam extends JViewLegacy
 
 		if ($isNew)
 		{
-			$title = JText::_('COM_WORKTEAM_MANAGER_WORKTEAM_NEW');
+			JToolBarHelper::title(JText::_('COM_WORKTEAM_MANAGER_WORKTEAM_NEW'));
 		}
 		else
 		{
-			$title = JText::_('COM_WORKTEAM_MANAGER_WORKTEAM_EDIT');
+			JToolBarHelper::title(JText::_('COM_WORKTEAM_MANAGER_WORKTEAM_EDIT'));
 		}
 
-		JToolBarHelper::title($title, 'workteam');
+		// JToolBarHelper::title($title, 'workteam');
+		JToolBarHelper::apply('workteam.apply');
 		JToolBarHelper::save('workteam.save');
+		JToolBarHelper::save2new('workteam.save2new');
 		JToolBarHelper::cancel(
 			'workteam.cancel',
 			$isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
