@@ -11,24 +11,31 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Teams View
+ * WorkTeam View
  *
  * @since  0.0.1
  */
-class WorkTeamViewteams extends JViewLegacy
+class WorkTeamViewWorkTeam extends JViewLegacy
 {
 	/**
-	 * Display the Teams view
+	 * View form
+	 *
+	 * @var         form
+	 */
+	protected $form = null;
+
+	/**
+	 * Display the Work Team view
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
 	 * @return  void
 	 */
-	function display($tpl = null)
+	public function display($tpl = null)
 	{
-		// Get data from the model
-		$this->items		= $this->get('Items');
-		$this->pagination	= $this->get('Pagination');
+		// Get the Data
+		$this->form = $this->get('Form');
+		$this->item = $this->get('Item');
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
@@ -37,6 +44,7 @@ class WorkTeamViewteams extends JViewLegacy
 
 			return false;
 		}
+
 
 		// Set the toolbar
 		$this->addToolBar();
@@ -54,11 +62,27 @@ class WorkTeamViewteams extends JViewLegacy
 	 */
 	protected function addToolBar()
 	{
-		JToolBarHelper::title(JText::_('COM_WORKTEAM_MANAGER_TEAMS'));
-		JToolBarHelper::addNew('workteam.add');
-		JToolBarHelper::editList('workteam.edit');
-		JToolBarHelper::publishList('teams.publish');
-		JToolBarHelper::unpublishList('teams.unpublish');
-		JToolBarHelper::deleteList('', 'teams.delete');
+		$input = JFactory::getApplication()->input;
+
+		// Hide Joomla Administrator Main menu
+		$input->set('hidemainmenu', true);
+
+		$isNew = ($this->item->id == 0);
+
+		if ($isNew)
+		{
+			$title = JText::_('COM_WORKTEAM_MANAGER_WORKTEAM_NEW');
+		}
+		else
+		{
+			$title = JText::_('COM_WORKTEAM_MANAGER_WORKTEAM_EDIT');
+		}
+
+		JToolBarHelper::title($title, 'workteam');
+		JToolBarHelper::save('workteam.save');
+		JToolBarHelper::cancel(
+			'workteam.cancel',
+			$isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE'
+		);
 	}
 }

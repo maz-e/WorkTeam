@@ -9,7 +9,7 @@
    <copyright>Copyright Info</copyright>
    <license>License Info</license>
    <!-- The version string is recorded in the component table -->
-   <version>0.0.5</version>
+   <version>0.0.6</version>
    <!-- The description is optional and defaults to the name -->
    <description>COM_WORKTEAM_DESCRIPTION</description>
 
@@ -58,10 +58,14 @@
          <filename>controller.php</filename>
          <!-- SQL files section -->
          <folder>sql</folder>
+         <!-- tables files section -->
+			<folder>tables</folder>
          <!-- models files section -->
 			<folder>models</folder>
 			<!-- views files section -->
 			<folder>views</folder>
+         <!-- controllers files section -->
+			<folder>controllers</folder>
       </files>
       <languages folder="admin/language">
          <language tag="es-ES">es-ES/es-ES.com_workteam.ini</language>

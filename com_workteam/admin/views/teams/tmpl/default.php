@@ -10,7 +10,7 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted Access');
 ?>
-<form action="index.php?option=com_workteam&view=teams" method="post" id="adminForm" name="adminForm">
+<form action=<?php echo JRoute::_('index.php?option=com_workteam&view=teams'); ?> method="post" id="adminForm" name="adminForm">
 	<table class="table table-striped table-hover">
 		<thead>
 		<tr>
@@ -38,8 +38,9 @@ defined('_JEXEC') or die('Restricted Access');
 		</tfoot>
 		<tbody>
 			<?php if (!empty($this->items)) : ?>
-				<?php foreach ($this->items as $i => $row) : ?>
-
+				<?php foreach ($this->items as $i => $row) :
+					$link = JRoute::_('index.php?option=com_workteam&task=workteam.edit&id=' . $row->id);
+				?>
 					<tr>
 						<td>
 							<?php echo $this->pagination->getRowOffset($i); ?>
@@ -48,7 +49,9 @@ defined('_JEXEC') or die('Restricted Access');
 							<?php echo JHtml::_('grid.id', $i, $row->id); ?>
 						</td>
 						<td>
-							<?php echo $row->greeting; ?>
+							<a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_WORKTEAM_EDIT_WORKTEAM'); ?>">
+								<?php echo $row->name; ?>
+							</a>
 						</td>
 						<td align="center">
 							<?php echo JHtml::_('jgrid.published', $row->published, $i, 'teams.', true, 'cb'); ?>
@@ -61,4 +64,7 @@ defined('_JEXEC') or die('Restricted Access');
 			<?php endif; ?>
 		</tbody>
 	</table>
+	<input type="hidden" name="task" value=""/>
+	<input type="hidden" name="boxchecked" value="0"/>
+	<?php echo JHtml::_('form.token'); ?>
 </form>
