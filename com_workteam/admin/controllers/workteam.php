@@ -18,4 +18,8 @@ defined('_JEXEC') or die('Restricted access');
  */
 class WorkTeamControllerWorkTeam extends JControllerForm
 {
+   function __construct() {
+        $this->view_list = 'teams';
+        parent::__construct();
+   }
 }
