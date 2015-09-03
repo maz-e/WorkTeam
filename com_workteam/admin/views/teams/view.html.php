@@ -26,9 +26,18 @@ class WorkTeamViewteams extends JViewLegacy
 	 */
 	function display($tpl = null)
 	{
+		// Get application
+		$app = JFactory::getApplication();
+		$context = "workteam.list.admin.workteam";
+
 		// Get data from the model
 		$this->items		= $this->get('Items');
 		$this->pagination	= $this->get('Pagination');
+		$this->state			= $this->get('State');
+		$this->filter_order 	= $app->getUserStateFromRequest($context.'filter_order', 'filter_order', 'contact_name', 'cmd');
+		$this->filter_order_Dir = $app->getUserStateFromRequest($context.'filter_order_Dir', 'filter_order_Dir', 'asc', 'cmd');
+		$this->filterForm    	= $this->get('FilterForm');
+		$this->activeFilters 	= $this->get('ActiveFilters');
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
@@ -38,7 +47,11 @@ class WorkTeamViewteams extends JViewLegacy
 			return false;
 		}
 
-		// Set the toolbar
+		// Set the submenu
+		// BdGalleryHelper::addSubmenu('teams');
+		// $this->sidebar = JHtmlSidebar::render();
+
+		// Set the toolbar and number of found items
 		$this->addToolBar();
 
 		// Display the template
