@@ -6,6 +6,7 @@ CREATE TABLE `#__workteam` (
    `email` VARCHAR(100) NULL,
    `img_user` VARCHAR(25) NULL,
 	`published` tinyint(4) NOT NULL,
+	`catid`	    int(11)    NOT NULL DEFAULT '0',
 	PRIMARY KEY (`id`)
 )
 	ENGINE =MyISAM

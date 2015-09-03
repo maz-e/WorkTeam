@@ -29,9 +29,10 @@ class WorkTeamModelTeams extends JModelList
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id',
-				'contact_name',
-				'published'
+				'a.id',
+				'a.contact_name',
+				'a.published',
+				'c.title'
 			);
 		}
 
@@ -50,8 +51,9 @@ class WorkTeamModelTeams extends JModelList
 		$query = $db->getQuery(true);
 
 		// Create the base select statement.
-		$query->select('*')
-                ->from($db->quoteName('#__workteam'));
+		$query->select('a.*, c.title')
+                ->from($db->quoteName('#__workteam').'AS a')
+					 ->join('LEFT', '#__categories AS c ON c.id = a.catid');
 
 		// Filter: like / search
 		$search = $this->getState('filter.search');
@@ -67,15 +69,15 @@ class WorkTeamModelTeams extends JModelList
 
 		if (is_numeric($published))
 		{
-			$query->where('published = ' . (int) $published);
+			$query->where('a.published = ' . (int) $published);
 		}
 		elseif ($published === '')
 		{
-			$query->where('(published IN (0, 1))');
+			$query->where('(a.published IN (0, 1))');
 		}
 
 		// Add the list ordering clause.
-		$orderCol	= $this->state->get('list.ordering', 'contact_name');
+		$orderCol	= $this->state->get('list.ordering', 'a.contact_name');
 		$orderDirn 	= $this->state->get('list.direction', 'asc');
 
 		$query->order($db->escape($orderCol) . ' ' . $db->escape($orderDirn));

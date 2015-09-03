@@ -10,7 +10,7 @@
 		<field
 			name="contact_name"
 			type="text"
-			label="COM_WORKTEAM_WORKTEAM_NAME_LABEL"
+			label="COM_WORKTEAM_WORKTEAM_CONTACT_NAME_LABEL"
 			description="COM_WORKTEAM_WORKTEAM_NAME_DESC"
 			size="40"
 			class="inputbox input-xlarge input-large-text validate-workteam"
@@ -23,7 +23,6 @@
 			type="email"
 			label="JGLOBAL_EMAIL"
 			description="COM_ADMIN_USER_FIELD_EMAIL_DESC"
-			required="true"
 			size="30"
 			class="inputbox"
 			validate="email"
@@ -38,6 +37,18 @@
 		>
 			<option value="1">JPUBLISHED</option>
 			<option value="0">JUNPUBLISHED</option>
+		</field>
+		<field
+				name="catid"
+				type="category"
+				extension="com_workteam"
+				class="inputbox"
+				default=""
+				label="COM_WORKTEAM_WORKTEAM_FIELD_CATID_LABEL"
+				description="COM_WORKTEAM_WORKTEAM_FIELD_CATID_DESC"
+				required="true"
+		>
+			<option value="0">JOPTION_SELECT_CATEGORY</option>
 		</field>
 		<field
 			name="img_user"

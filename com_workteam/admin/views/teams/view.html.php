@@ -48,8 +48,8 @@ class WorkTeamViewteams extends JViewLegacy
 		}
 
 		// Set the submenu
-		// BdGalleryHelper::addSubmenu('teams');
-		// $this->sidebar = JHtmlSidebar::render();
+		WorkTeamHelper::addSubmenu('teams');
+		$this->sidebar = JHtmlSidebar::render();
 
 		// Set the toolbar and number of found items
 		$this->addToolBar();
