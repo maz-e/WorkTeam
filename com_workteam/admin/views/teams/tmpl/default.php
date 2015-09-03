@@ -19,7 +19,7 @@ defined('_JEXEC') or die('Restricted Access');
 				<?php echo JHtml::_('grid.checkall'); ?>
 			</th>
 			<th width="90%">
-				<?php echo JText::_('COM_WORKTEAM_TEAMS_NAME') ;?>
+				<?php echo JText::_('COM_WORKTEAM_TEAMS_CONTACT_NAME') ;?>
 			</th>
 			<th width="5%">
 				<?php echo JText::_('COM_WORKTEAM_PUBLISHED'); ?>
@@ -50,7 +50,7 @@ defined('_JEXEC') or die('Restricted Access');
 						</td>
 						<td>
 							<a href="<?php echo $link; ?>" title="<?php echo JText::_('COM_WORKTEAM_EDIT_WORKTEAM'); ?>">
-								<?php echo $row->name; ?>
+								<?php echo $row->contact_name; ?>
 							</a>
 						</td>
 						<td align="center">
