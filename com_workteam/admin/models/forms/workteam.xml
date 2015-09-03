@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<form>
+<form
+				addrulepath="/administrator/components/com_workteam/models/rules"
+>
 	<fieldset>
 		<field
 			name="id"
@@ -11,7 +13,8 @@
 			label="COM_WORKTEAM_WORKTEAM_NAME_LABEL"
 			description="COM_WORKTEAM_WORKTEAM_NAME_DESC"
 			size="40"
-			class="inputbox input-xlarge input-large-text"
+			class="inputbox input-xlarge input-large-text validate-workteam"
+			validate="contacto"
 			required="true"
 			default=""
 		/>
