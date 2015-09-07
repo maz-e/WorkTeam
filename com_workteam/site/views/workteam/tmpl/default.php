@@ -48,7 +48,9 @@ $cat ="";
 				<?php if($row->params->get('show_name') == 1) {
 					echo '<span class="red-text">' . $row->contact_name . '</span><br>';
 				}
+				if ($row->email !== "") {
 					echo JHtml::_('email.cloak', $row->email, 0);
+				}
 				?>
 				</div>
 			</div>
@@ -81,7 +83,9 @@ $cat ="";
 					<?php if($row->params->get('show_name') == 1) {
 						echo '<span class="red-text">' . $row->contact_name . '</span><br>';
 					}
+					if ($row->email !== "") {
 						echo JHtml::_('email.cloak', $row->email, 0);
+					}
 					?>
 					</div>
 				</div>
