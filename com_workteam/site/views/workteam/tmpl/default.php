@@ -37,9 +37,9 @@ $cat ="";
 				<?php else: ?>
 				<div class="col s3">
 					<?php if ($row->sex_user == 0) {
-						echo JHtml::_('image', 'images/bladis/default-muser-img.png', 'Default user image', 'class="circle responsive-img"');
+						echo JHtml::_('image', 'components/com_workteam/img/default-muser-img.png', 'Default user image', 'class="circle responsive-img"');
 					} else {
-						echo JHtml::_('image', 'images/bladis/default-wuser-img.png', 'Default user image', 'class="circle responsive-img"');
+						echo JHtml::_('image', 'components/com_workteam/img/default-wuser-img.png', 'Default user image', 'class="circle responsive-img"');
 					} ?>
 				</div>
 				<?php endif; ?>
@@ -70,9 +70,9 @@ $cat ="";
 					<?php else : ?>
 						<div class="col s3">
 							<?php if ($row->sex_user == 0) {
-								echo JHtml::_('image', 'images/bladis/default-muser-img.png', 'Default user image', 'class="circle responsive-img"');
+								echo JHtml::_('image', 'components/com_workteam/img/default-muser-img.png', 'Default user image', 'class="circle responsive-img"');
 							} else {
-								echo JHtml::_('image', 'images/bladis/default-wuser-img.png', 'Default user image', 'class="circle responsive-img"');
+								echo JHtml::_('image', 'components/com_workteam/img/default-wuser-img.png', 'Default user image', 'class="circle responsive-img"');
 							} ?>
 						</div>
 					<?php endif; ?>
