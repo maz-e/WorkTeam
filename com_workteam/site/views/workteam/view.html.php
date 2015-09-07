@@ -32,6 +32,19 @@ class WorkTeamViewWorkTeam extends JViewLegacy
 		$this->items		   = $this->get('Items');
       $this->params        = $app->getParams();
 
+      // Prepare the item data params.
+      foreach ($this->items as $item) {
+         // Load the JSON string
+         $params = new JRegistry;
+   		$params->loadString($item->params, 'JSON');
+         $item->params = $params;
+
+   		// Merge global params with item params
+   		$params = clone $this->params;
+   		$params->merge($item->params);
+   		$item->params = $params;
+      }
+
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
 		{

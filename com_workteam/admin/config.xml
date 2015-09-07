@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="teams"
+		label="COM_WORKTEAM_CONFIG_TEAMS_SETTINGS_LABEL"
+		description="COM_WORKTEAM_CONFIG_TEAMS_SETTINGS_DESC"
+	>
+		<field
+			name="show_name"
+			type="radio"
+			label="COM_WORKTEAM_WORKTEAM_FIELD_SHOW_CONTACT_NAME_LABEL"
+			description="COM_WORKTEAM_WORKTEAM_FIELD_SHOW_CONTACT_NAME_DESC"
+			default="0"
+			class="btn-group btn-group-yesno"
+		>
+			<option value="0">JHIDE</option>
+			<option value="1">JSHOW</option>
+		</field>
+		<field
+			name="show_image"
+			type="radio"
+			label="COM_WORKTEAM_WORKTEAM_FIELD_SHOW_IMAGE_LABEL"
+			description="COM_WORKTEAM_WORKTEAM_FIELD_SHOW_IMAGE_DESC"
+			default="0"
+			class="btn-group btn-group-yesno"
+   	>
+   		<option value="0">JHIDE</option>
+   		<option value="1">JSHOW</option>
+   	</field>
+	</fieldset>
+</config>

@@ -2,62 +2,94 @@
 <form
 				addrulepath="/administrator/components/com_workteam/models/rules"
 >
-	<fieldset>
-		<field
-			name="id"
-			type="hidden"
-		/>
-		<field
-			name="contact_name"
-			type="text"
-			label="COM_WORKTEAM_WORKTEAM_CONTACT_NAME_LABEL"
-			description="COM_WORKTEAM_WORKTEAM_NAME_DESC"
-			size="40"
-			class="inputbox input-xlarge input-large-text validate-workteam"
-			validate="contacto"
-			required="true"
-			default=""
-		/>
-		<field
-			name="email"
-			type="email"
-			label="JGLOBAL_EMAIL"
-			description="COM_ADMIN_USER_FIELD_EMAIL_DESC"
-			size="30"
-			class="inputbox"
-			validate="email"
-		/>
-		<field
-			name="published"
-			type="radio"
-			default="0"
-			class="btn-group btn-group-yesno"
-			label="JSTATUS"
-			description="JFIELD_PUBLISHED_DESC"
-		>
-			<option value="1">JPUBLISHED</option>
-			<option value="0">JUNPUBLISHED</option>
-		</field>
-		<field
-				name="catid"
-				type="category"
-				extension="com_workteam"
-				class="inputbox"
-				default=""
-				label="COM_WORKTEAM_WORKTEAM_FIELD_CATID_LABEL"
-				description="COM_WORKTEAM_WORKTEAM_FIELD_CATID_DESC"
+	<fieldset
+				name="details"
+				label="COM_WORKTEAM_WORKTEAM_DETAILS"
+	>
+			<field
+				name="id"
+				type="hidden"
+			/>
+			<field
+				name="contact_name"
+				type="text"
+				label="COM_WORKTEAM_WORKTEAM_CONTACT_NAME_LABEL"
+				description="COM_WORKTEAM_WORKTEAM_NAME_DESC"
+				size="40"
+				class="inputbox input-xlarge input-large-text validate-workteam"
+				validate="contacto"
 				required="true"
-		>
-			<option value="0">JOPTION_SELECT_CATEGORY</option>
-		</field>
-		<field
-			name="img_user"
-			type="media"
-			class=""
-			default=""
-			label="COM_WORKTEAM_WORKTEAM_FIELD_IMGUSER_LABEL"
-			description="COM_WORKTEAM_WORKTEAM_FIELD_IMGUSER_DESC"
-			directory=""
-		/>
+				default=""
+			/>
+			<field
+				name="email"
+				type="email"
+				label="JGLOBAL_EMAIL"
+				description="COM_ADMIN_USER_FIELD_EMAIL_DESC"
+				size="30"
+				class="inputbox"
+				validate="email"
+			/>
+			<field
+				name="published"
+				type="radio"
+				default="0"
+				class="btn-group btn-group-yesno"
+				label="JSTATUS"
+				description="JFIELD_PUBLISHED_DESC"
+			>
+				<option value="1">JPUBLISHED</option>
+				<option value="0">JUNPUBLISHED</option>
+			</field>
+			<field
+					name="catid"
+					type="category"
+					extension="com_workteam"
+					class="inputbox"
+					default=""
+					label="COM_WORKTEAM_WORKTEAM_FIELD_CATID_LABEL"
+					description="COM_WORKTEAM_WORKTEAM_FIELD_CATID_DESC"
+					required="true"
+			>
+				<option value="0">JOPTION_SELECT_CATEGORY</option>
+			</field>
+			<field
+				name="img_user"
+				type="media"
+				class=""
+				default=""
+				label="COM_WORKTEAM_WORKTEAM_FIELD_IMGUSER_LABEL"
+				description="COM_WORKTEAM_WORKTEAM_FIELD_IMGUSER_DESC"
+				directory=""
+			/>
 	</fieldset>
+	<fields name="params">
+		<fieldset
+				name="params"
+				label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS"
+		>
+			<field
+					name="show_name"
+					type="list"
+					label="COM_WORKTEAM_WORKTEAM_FIELD_SHOW_CONTACT_NAME_LABEL"
+					description="COM_WORKTEAM_WORKTEAM_FIELD_SHOW_CONTACT_NAME_DESC"
+					default=""
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field
+					name="show_image"
+					type="list"
+					label="COM_WORKTEAM_WORKTEAM_FIELD_SHOW_IMAGE_LABEL"
+					description="COM_WORKTEAM_WORKTEAM_FIELD_SHOW_IMAGE_DESC"
+					default=""
+			>
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+	</fields>
 </form>

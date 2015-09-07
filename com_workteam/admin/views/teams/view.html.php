@@ -73,5 +73,6 @@ class WorkTeamViewteams extends JViewLegacy
 		JToolBarHelper::publishList('teams.publish');
 		JToolBarHelper::unpublishList('teams.unpublish');
 		JToolBarHelper::deleteList('', 'teams.delete');
+		JToolBarHelper::preferences('com_workteam');
 	}
 }
