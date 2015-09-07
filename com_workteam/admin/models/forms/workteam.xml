@@ -54,6 +54,16 @@
 				<option value="0">JOPTION_SELECT_CATEGORY</option>
 			</field>
 			<field
+					name="sex_user"
+					type="list"
+					label="COM_WORKTEAM_WORKTEAM_FIELD_SEX_USER_LABEL"
+					description="COM_WORKTEAM_WORKTEAM_FIELD_SEX_USER_DESC"
+					default="0"
+			>
+				<option value="0">COM_WORKTEAM_WORKTEAM_OPTION_ONE_SEX_USER</option>
+				<option value="1">COM_WORKTEAM_WORKTEAM_OPTION_TWO_SEX_USER</option>
+			</field>
+			<field
 				name="img_user"
 				type="media"
 				class=""

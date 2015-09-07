@@ -14,7 +14,6 @@ defined('_JEXEC') or die('Restricted access');
 $cat ="";
 ?>
 
-<h1 class="teal-text"><?php echo JText::_('COM_WORKTEAM_WORKTEAM_VIEW'); ?></h1>
 <?php if (empty($this->items)) : ?>
 	<div class="card-panel alert-success animated bounceIn">
 		<div class="valign-wrapper flow-text teal-text text-darken-2">
@@ -37,13 +36,17 @@ $cat ="";
 				</div>
 				<?php else: ?>
 				<div class="col s3">
-					<?php echo JHtml::_('image', 'images/bladis/default-muser-img.png', 'Default user image', 'class="circle responsive-img"'); ?>
+					<?php if ($row->sex_user == 0) {
+						echo JHtml::_('image', 'images/bladis/default-muser-img.png', 'Default user image', 'class="circle responsive-img"');
+					} else {
+						echo JHtml::_('image', 'images/bladis/default-wuser-img.png', 'Default user image', 'class="circle responsive-img"');
+					} ?>
 				</div>
 				<?php endif; ?>
 			<?php endif; ?>
-				<div class="col s9">
+				<div class="col s9 flow-text">
 				<?php if($row->params->get('show_name') == 1) {
-					echo $row->contact_name . '<br>';
+					echo '<span class="red-text">' . $row->contact_name . '</span><br>';
 				}
 					echo $row->email
 				?>
@@ -58,16 +61,25 @@ $cat ="";
 				<div class="row valign-wrapper">
 				<?php if($row->params->get('show_image') == 1) :?>
 					<?php if ($row->img_user !== "") : ?>
-						<?php echo JHtml::_('image', $row->img_user, $row->$img_user); ?>
+					<div class="col s3">
+						<?php
+						$dir = $row->img_user;
+						echo JHtml::_('image', $dir, 'User image', 'class="circle responsive-img"');
+						?>
+					</div>
 					<?php else : ?>
 						<div class="col s3">
-							<?php echo JHtml::_('image', 'images/bladis/default-wuser-img.png', 'Default user image', 'class="circle responsive-img"'); ?>
+							<?php if ($row->sex_user == 0) {
+								echo JHtml::_('image', 'images/bladis/default-muser-img.png', 'Default user image', 'class="circle responsive-img"');
+							} else {
+								echo JHtml::_('image', 'images/bladis/default-wuser-img.png', 'Default user image', 'class="circle responsive-img"');
+							} ?>
 						</div>
 					<?php endif; ?>
 				<?php endif; ?>
-					<div class="col s9">
+					<div class="col s9 flow-text">
 					<?php if($row->params->get('show_name') == 1) {
-						echo $row->contact_name . '<br>';
+						echo '<span class="red-text">' . $row->contact_name . '</span><br>';
 					}
 						echo $row->email
 					?>
