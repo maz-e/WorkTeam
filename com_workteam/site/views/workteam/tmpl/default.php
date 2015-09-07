@@ -48,7 +48,7 @@ $cat ="";
 				<?php if($row->params->get('show_name') == 1) {
 					echo '<span class="red-text">' . $row->contact_name . '</span><br>';
 				}
-					echo $row->email
+					echo JHtml::_('email.cloak', $row->email, 0);
 				?>
 				</div>
 			</div>
@@ -81,11 +81,11 @@ $cat ="";
 					<?php if($row->params->get('show_name') == 1) {
 						echo '<span class="red-text">' . $row->contact_name . '</span><br>';
 					}
-						echo $row->email
+						echo JHtml::_('email.cloak', $row->email, 0);
 					?>
 					</div>
 				</div>
-			<?php $cat = $row->title ?>
+			<?php $cat = $row->title; ?>
 		<?php endif; ?>
    <?php endforeach ?>
 		</div> <!-- Fin div col s12 m6 -->
