@@ -11,7 +11,8 @@
 defined('_JEXEC') or die('Restricted access');
 
 // Define variables
-$cat ="";
+$cat = "";
+$i = 0;
 ?>
 
 <?php if (empty($this->items)) : ?>
@@ -24,7 +25,6 @@ $cat ="";
 	<div class="row">
    <?php foreach ($this->items as $i => $row) : ?>
 		<?php if($cat == $row->title) : ?>
-			<!-- $html = '<div class="row valign-wrapper">'; -->
 			<div class="row valign-wrapper">
 			<?php if($row->params->get('show_image') == 1) : ?>
 				<?php if ($row->img_user !== "") : ?>
@@ -55,9 +55,14 @@ $cat ="";
 				</div>
 			</div>
 		<?php else : ?>
-			<?php if ($i!==0) : ?>
-				</div>
-			<?php endif; ?>
+			<?php if ($i!==0) {
+				// Close div col s12 m6
+				echo '</div>';
+				if ($i % 2 == 0) {
+					// Close and start row
+					echo '</div><div class="row">';
+				}
+			} $i++; ?>
 			<div class="col s12 m6">
 				<h5 class="teal-text"><?php echo $row->title; ?></h5>
 				<div class="row valign-wrapper">
@@ -92,6 +97,6 @@ $cat ="";
 			<?php $cat = $row->title; ?>
 		<?php endif; ?>
    <?php endforeach ?>
-		</div> <!-- Fin div col s12 m6 -->
+		</div> <!-- Close div col s12 m6 -->
 	</div>
 <?php endif ?>
