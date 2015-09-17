@@ -23,7 +23,7 @@ $i = 0;
 	</div>
 <?php else : ?>
 	<div class="row">
-   <?php foreach ($this->items as $i => $row) : ?>
+   <?php foreach ($this->items as $row) : ?>
 		<?php if($cat == $row->title) : ?>
 			<div class="row valign-wrapper">
 			<?php if($row->params->get('show_image') == 1) : ?>
