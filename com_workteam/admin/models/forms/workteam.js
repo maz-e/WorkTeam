@@ -1,7 +1,8 @@
 jQuery(function() {
-    document.formvalidator.setHandler('contacto',
-        function (value) {
-            regex=/^[^0-9]+$/;
-            return regex.test(value);
-        });
+   document.formvalidator.setHandler('contacto',
+      function (value) {
+         // Match any single character except symbols
+         regex=/^[^$-/:-?{-~!"^_`\[\]]+$/;
+         return regex.test(value);
+      });
 });
