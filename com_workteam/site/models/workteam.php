@@ -29,12 +29,12 @@ class WorkTeamModelWorkTeam extends JModelList
 		$query = $db->getQuery(true);
 
 		// Create the base select statement.
-		$query->select('a.*, c.title')
+		$query->select('a.*, c.title, c.lft')
                 ->from($db->quoteName('#__workteam') . 'AS a')
 					 ->join('LEFT', '#__categories AS c ON c.id = a.catid');
 
 		$query->where('a.published = 1');
-      $query->order('c.title asc');
+      $query->order('c.lft asc');
 
 		return $query;
 	}
